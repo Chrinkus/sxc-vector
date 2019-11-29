@@ -1,0 +1,10 @@
+file(GLOB SOURCES "*.c")
+file(GLOB HEADERS "*.h")
+
+add_library("${LIB_NAME}" SHARED "${SOURCES}")
+
+set_target_properties("${LIB_NAME}" PROPERTIES PUBLIC_HEADER "${HEADERS}")
+
+install(TARGETS "${LIB_NAME}"
+		LIBRARY DESTINATION "${LIB_DEST}"
+		PUBLIC_HEADER DESTINATION "${INC_DEST}")
