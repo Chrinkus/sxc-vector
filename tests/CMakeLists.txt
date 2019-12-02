@@ -16,3 +16,7 @@ add_executable(get_t tests_get.c)
 target_link_libraries(get_t PRIVATE "${LIB_NAME}")
 add_test(NAME get COMMAND get_t)
 
+add_executable(set_t tests_set.c)
+target_link_libraries(set_t PRIVATE "${LIB_NAME}")
+add_test(NAME set COMMAND set_t)
+

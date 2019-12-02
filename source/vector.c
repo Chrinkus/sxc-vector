@@ -52,3 +52,8 @@ int vector_get(vector* v, size_t index)
 {
     return v->elem[index];
 }
+
+void vector_set(vector* v, size_t index, int val)
+{
+    v->elem[index] = val;
+}
