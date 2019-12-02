@@ -7,9 +7,7 @@ int main(void)
 	vector v;
 	vector_init(&v);
 
-	assert(v.sz == 0);
-	assert(v.cp == 0);
-	assert(v.elem == NULL);
+	assert(vector_size(&v) == 0);
 
-    vector_free(&v);
+	vector_free(&v);
 }
