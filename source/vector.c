@@ -34,11 +34,6 @@ void vector_free(vector* v)
     free(v->elem);
 }
 
-size_t vector_size(vector* v)
-{
-    return v->sz;
-}
-
 size_t vector_push(vector* v, int val)
 {
     if ((v->sz == v->cp) && !(vector_reserve(v)))
