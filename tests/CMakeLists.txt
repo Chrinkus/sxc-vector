@@ -20,3 +20,6 @@ add_executable(set_t tests_set.c)
 target_link_libraries(set_t PRIVATE "${LIB_NAME}")
 add_test(NAME set COMMAND set_t)
 
+# cmocka
+add_executable(tests_all tests_main.c)
+target_link_libraries(tests_all PRIVATE cmocka sxc_vector)

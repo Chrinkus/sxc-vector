@@ -3,11 +3,11 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define VECTOR_INIT_CP 8
+enum { growth_delta = 8 };
 
 static size_t vector_reserve(vector* v)
 {
-    size_t new_cp = v->cp == 0 ? VECTOR_INIT_CP : 2 * v->cp;
+    size_t new_cp = v->cp == 0 ? growth_delta : 2 * v->cp;
     int* new_elem = (int*)malloc(sizeof(int) * new_cp);
 
     if (!new_elem)
