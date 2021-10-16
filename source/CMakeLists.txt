@@ -1,5 +1,14 @@
-file(GLOB SOURCES "*.c")
-file(GLOB HEADERS "*.h")
+set(SOURCES
+	"vector.c"
+	#"vector_int.c"
+	#"vector_char.c"
+)
+
+set(HEADERS
+	"vector.h"
+	#"vector_int.h"
+	#"vector_char.h"
+)
 
 add_library("${LIB_NAME}" SHARED "${SOURCES}")
 

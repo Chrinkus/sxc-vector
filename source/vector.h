@@ -5,25 +5,18 @@
 typedef struct Vector vector;
 
 struct Vector {
-	size_t sz;
-	size_t cp;
-	int* elem;
+	size_t size;
+	size_t cap;
+	int elem_size;
+	//unsigned flags;
+	void* elem;
 };
 
-void vector_init(vector* v);
+vector* vector_init(vector* v, int elem_size);
 void vector_free(vector* v);
 
-int vector_get(vector* v, size_t index);
-void vector_set(vector* v, size_t index, int val);
+void* vector_get(vector* v, size_t index);
 
-size_t vector_push(vector* v, int item);
+size_t vector_push(vector* v, void* item);
+void* vector_place(vector* v);
 
-size_t vector_size(vector* v)
-{
-	return v->sz;
-}
-
-int* vector_data(vector* v)
-{
-	return v->elem;
-}
